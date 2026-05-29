@@ -68,23 +68,9 @@ Um componente único fazendo: fetch → transformação → renderização. Deve
 
 ---
 
-## Resultados do audit — [DATA DO AUDIT]
+## Resultados do audit
 
-> **[COMO PREENCHER]**
-> Após rodar o prompt de audit periódico (seção abaixo), registre os resultados aqui.
-> Use o formato:
->
-> ### Prioridade 1 — [Descrição do problema]
-> `[caminho/arquivo.tsx]` — [descrição do problema: ex: "mistura 3 roles + 4 queries + 25 componentes"]
->
-> **Plano de split:**
->
-> | Arquivo novo | Conteúdo | Tier | Status |
-> |---|---|---|---|
-> | `src/[pasta]/[arquivo].ts` | [o que vai para este arquivo] | 1 | ⬜ pendente |
->
-> ### Divergências intencionais documentadas
-> - `[nome]` em `[arquivo]`: [motivo de manter separado]. **Não** unificar.
+> Resultados registrados em [[separation-of-concerns-report]] — não armazenar aqui.
 
 ---
 

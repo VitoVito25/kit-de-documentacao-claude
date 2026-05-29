@@ -1,6 +1,6 @@
 ---
 name: obsidian-documentation
-description: "Guide for creating and editing notes in Obsidian vaults following OFM conventions, note templates, and linking standards. Use this skill whenever the user asks to document a component, page, screen, feature, or business rule in Obsidian; create vault notes; write to a second brain or knowledge base; use wikilinks or Obsidian Flavored Markdown. Trigger on phrases like \"documentar no obsidian\", \"criar nota\", \"documentar componente\", \"documentar regra de negócio\", \"escrever no vault\", \"document this in obsidian\", \"create a note for\", \"add to the vault\", \"write vault docs\". Also trigger when the user says \"document this\" and context suggests an Obsidian vault is in use. Don't wait for the user to explicitly say \"obsidian\" — if they mention wikilinks, a vault, or documenting for a knowledge base, apply this skill."
+description: "Guide for creating and editing notes in Obsidian vaults following OFM conventions, note templates, and linking standards. Use this skill whenever the user asks to document a component, page, screen, feature, or business rule in Obsidian; create vault notes; write to a second brain or knowledge base; use wikilinks or Obsidian Flavored Markdown. Trigger on phrases like \"documentar no obsidian\", \"criar nota\", \"documentar componente\", \"documentar regra de negócio\", \"escrever no vault\", \"document this in obsidian\", \"create a note for\", \"add to the vault\", \"write vault docs\". Also trigger when the user says \"document this\" and context suggests an Obsidian vault is in use. ALWAYS trigger when the user searches for, reads, opens, references, or interacts in any way with any file inside the `documentation/` folder — this folder IS the Obsidian vault; every read or write operation on it requires this skill to be active. Don't wait for the user to explicitly say \"obsidian\" — if they mention wikilinks, a vault, documenting for a knowledge base, or any path inside `documentation/`, apply this skill."
 ---
 
 # Obsidian Documentation Skill
@@ -39,6 +39,22 @@ Document not just *what* was built, but *why*. A reader without context should u
 | `{instructions}` | Meta-docs and agent instructions |
 | `{info}` | Support info: business rules, glossary, context |
 | `{page}` | Documentation for a specific page/view/screen |
+| `{tools}` | Audit protocols and agent behavior contracts — loaded each session, must stay lean |
+| `{reports}` | Output of running a tool — audit results, findings, plans, status tracking |
+
+### `{tools}` vs `{reports}` distinction
+
+`{tools}` notes are **loaded into agent context every session** — keep them small. They define *how* to run an audit, the patterns to look for, and the reusable prompt. Never store results here.
+
+`{reports}` notes receive **the output of running a tool** — findings, split plans, status tables, divergence records. They are only loaded on demand. When a tool note says "record results here", write to the matching report file instead.
+
+Naming convention: `{tools}/[tool-name].md` → `{reports}/[tool-name]-report.md`
+
+Example pairs:
+- `{tools}/separation-of-concerns.md` → `{reports}/separation-of-concerns-report.md`
+- `{tools}/dry-refactoring.md` → `{reports}/dry-refactoring-report.md`
+- `{tools}/performance-audit.md` → `{reports}/performance-audit-report.md`
+- `{tools}/dead-code-audit.md` → `{reports}/dead-code-audit-report.md`
 
 ---
 
@@ -183,3 +199,5 @@ Before creating a new note:
 7. Prefer `> [!note]` / `> [!warning]` callouts over plain bold for critical information
 8. Each note covers ==one single topic== — if a note mixes two themes, propose splitting before continuing
 9. Link to `[[ai-best-practices]]` in agent instructions when relevant
+10. Never write audit results into `{tools}` notes — always write to the matching `{reports}` note
+11. When creating a new tool note, create its paired report file in `{reports}` with the `-report` suffix

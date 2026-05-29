@@ -90,26 +90,11 @@ Não execute nada sem aprovação do usuário.
 
 ---
 
-## Resultados do audit — [DATA DO AUDIT]
+## Resultados
 
-> **[COMO PREENCHER]**
-> Após rodar o prompt de audit, registre os resultados aqui.
-> Use emojis de status: 🔴 crítico | 🟡 moderado | 🟢 baixa prioridade | ✅ resolvido
-> Formato:
->
-> ### ✅ [Categoria] — [Descrição]
-> | Arquivo | Problema | Fix aplicado |
-> |---------|----------|-------------|
-> | `[arquivo]` | [problema] | [o que foi feito] |
->
-> ### 🔴 [Categoria] — [Descrição]
-> | Arquivo | Problema atual | Impacto estimado | Fix |
-> |---------|---------------|------------------|-----|
-> | `[arquivo]` | [problema] | [ex: +500ms / +2MB] | [solução proposta] |
->
-> **Pendente (aguardar aprovação):**
-> 1. [item pendente] — ganho estimado: [X]
+> Registre os resultados de cada audit em [[performace-audit-report]], não aqui.
+> Mantém este arquivo pequeno e reduz consumo de tokens por sessão.
 
 ---
 
-Ver também: [[coding-conventions]] | [[dry-refactoring]]
+Ver também: [[coding-conventions]] | [[dry-refactoring]] | [[performace-audit-report]]
