@@ -1,0 +1,117 @@
+---
+title: Dead Code Audit — [NOME DO PROJETO]
+date: YYYY-MM-DD
+tags:
+  - instructions
+  - audit
+  - dead-code
+  - claude
+aliases:
+  - dead-code
+  - code-cleanup
+---
+
+# Dead Code Audit
+
+> **Para Claude:** Nota especialista em identificar e remover código morto. Leia antes de qualquer sessão de limpeza.
+
+---
+
+> [!warning] Regra obrigatória
+> **Nunca executar remoção sem aprovação explícita do usuário.** Apresentar lista, aguardar confirmação, executar em lotes pequenos e verificáveis.
+
+**Princípio:** *"Menos é mais — mas ainda funciona."*
+
+---
+
+## O que verificar
+
+Antes de qualquer refatoração, auditar nessa ordem:
+
+### Componentes/módulos nunca utilizados
+Exportados que não aparecem em nenhum `import` ativo no projeto.
+
+> [!warning] Cuidado com falsos positivos
+> Ferramentas de análise de imports podem reportar falsos positivos em:
+> - Componentes de UI scaffolded reservados para uso futuro
+> - Arquivos que são importados dinamicamente
+> - Entry points que não aparecem em imports mas são usados pelo bundler
+>
+> **[COMO PREENCHER]** — Liste aqui os falsos positivos conhecidos do projeto após o primeiro audit.
+
+**Falsos positivos conhecidos:**
+> [Preencher após o primeiro audit. Exemplo: `src/components/ui/accordion.tsx` — instalado pelo shadcn, reservado para uso futuro]
+
+### Funções declaradas mas nunca chamadas
+Funções exportadas que não aparecem em nenhuma chamada fora do próprio arquivo.
+
+### Importações não utilizadas
+`import X from Y` onde `X` nunca aparece no corpo do arquivo.
+
+### State que nunca muda ou nunca é lido
+`useState` onde o setter nunca é chamado, ou onde o valor nunca é consumido.
+
+### Código comentado sem explicação
+Blocos de código comentados sem contexto de *por que* foram comentados. Exceção: TODOs com contexto claro.
+
+### Dependências não utilizadas
+Pacotes em `package.json` / `requirements.txt` / `go.mod` que não aparecem no código ativo.
+
+---
+
+## Resultado do audit — [DATA DO AUDIT]
+
+> **[COMO PREENCHER]**
+> Após rodar o prompt de audit periódico, registre os resultados aqui.
+> Use o formato abaixo. Atualize com cada sessão de limpeza.
+
+### Dependências não utilizadas
+
+| Pacote | Risco de remoção |
+|--------|-----------------|
+| `[nome-do-pacote]` | Baixo / Médio / Alto |
+
+### Arquivos removidos em [DATA]
+
+| Arquivo | Motivo |
+|---------|--------|
+| `[caminho/arquivo]` | [ex: Nunca importado — substituído por X] |
+
+### TODOs ativos no código
+
+> **[COMO PREENCHER]**
+> Liste aqui todos os TODOs encontrados no código com contexto suficiente para retomar.
+> Formato: `arquivo:linha → [descrição do TODO]`
+
+---
+
+## Workflow de remoção
+
+1. **Auditar** → identificar dead code (usar esta nota como guia)
+2. **Apresentar ao usuário** → lista com análise de risco
+3. **Aguardar aprovação** → usuário confirma o que pode remover
+4. **Remover em lote pequeno** → máx. 5-10 itens por sessão
+5. **Verificar build** → build sem erros
+6. **Sinalizar ponto de commit** → mensagem sugerida clara
+
+---
+
+## Prompt de audit periódico
+
+```
+Analise o projeto e identifique:
+- Componentes/módulos criados mas nunca utilizados
+- Funções declaradas mas nunca chamadas
+- Importações não utilizadas
+- Variáveis de estado que nunca mudam ou nunca são lidas
+- Código comentado sem explicação
+- Dependências instaladas mas não usadas no código ativo
+
+Sugira remoção. Monte tarefas e subtarefas para a refatoração.
+Não execute nada sem aprovação do usuário.
+Princípio: menos é mais, mas ainda funciona.
+```
+
+---
+
+Ver também: [[dry-refactoring]] | [[coding-conventions]]
