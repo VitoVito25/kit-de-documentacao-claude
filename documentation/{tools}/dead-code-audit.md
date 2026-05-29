@@ -59,29 +59,10 @@ Pacotes em `package.json` / `requirements.txt` / `go.mod` que não aparecem no c
 
 ---
 
-## Resultado do audit — [DATA DO AUDIT]
+## Resultado do audit
 
-> **[COMO PREENCHER]**
-> Após rodar o prompt de audit periódico, registre os resultados aqui.
-> Use o formato abaixo. Atualize com cada sessão de limpeza.
-
-### Dependências não utilizadas
-
-| Pacote | Risco de remoção |
-|--------|-----------------|
-| `[nome-do-pacote]` | Baixo / Médio / Alto |
-
-### Arquivos removidos em [DATA]
-
-| Arquivo | Motivo |
-|---------|--------|
-| `[caminho/arquivo]` | [ex: Nunca importado — substituído por X] |
-
-### TODOs ativos no código
-
-> **[COMO PREENCHER]**
-> Liste aqui todos os TODOs encontrados no código com contexto suficiente para retomar.
-> Formato: `arquivo:linha → [descrição do TODO]`
+Dependências não utilizadas, arquivos removidos e TODOs ativos — registrar e atualizar a cada sessão de limpeza.
+Consultar e atualizar em: [[dead-code-audit-report]]
 
 ---
 

@@ -51,43 +51,22 @@ aliases:
 
 ## Duplicações resolvidas
 
-> **[COMO PREENCHER]**
-> Registre aqui cada extração concluída, com data. Formato:
->
-> ### [Data da extração]
->
-> | Função/Constante/Componente | Arquivos originais (antes da extração) |
-> |-----------------------------|-----------------------------------------|
-> | `[nome]` | `[Arquivo1]`, `[Arquivo2]` |
->
-> Manter este histórico permite entender POR QUE algo foi para um utils específico
-> e evita regredir (mover de volta para os arquivos de origem).
+Histórico de extrações concluídas — função/componente extraído, arquivos de origem, data.
+Consultar e atualizar em: [[dry-refac-duplications-solved]]
 
 ---
 
 ## Divergências intencionais — NÃO compartilhadas
 
-> **[COMO PREENCHER]**
-> Documente aqui casos onde código PARECE duplicado mas é intencional manter separado.
-> Isso evita que o agente "corrija" uma divergência que foi uma decisão deliberada.
->
-> | Item | Arquivo divergente | Motivo da divergência |
-> |------|--------------------|----------------------|
-> | `[nome]` | `[arquivo]` | `[ex: threshold diferente, design distinto, tipo incompatível]` |
-
-> [!note] Por que documentar divergências intencionais?
-> Sem este registro, o agente (ou outro dev) pode tentar unificar código que parece duplicado mas tem diferenças sutis e intencionais. O registro protege decisões de design.
+Código que PARECE duplicado mas é intencional manter separado. Registrar antes de qualquer audit para evitar que o agente "corrija" decisões de design deliberadas.
+Consultar e atualizar em: [[dry-refac-intentionals-devergencies]]
 
 ---
 
 ## Pendências de extração
 
-> **[COMO PREENCHER]**
-> Liste aqui duplicações identificadas mas ainda não extraídas, aguardando aprovação.
-> Formato: o que está duplicado, onde, e o que impede a extração agora.
-
-> [!note] Pendente
-> `[Descreva a duplicação pendente]` — aguarda `[o que precisa acontecer antes de extrair]`.
+Duplicações identificadas ainda não extraídas — aguardando aprovação ou desbloqueio.
+Consultar e atualizar em: [[dry-refac-extraction-pendings]]
 
 ---
 

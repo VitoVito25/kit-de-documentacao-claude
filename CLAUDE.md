@@ -12,26 +12,37 @@ Conjunto de arquivos prontos para copiar em um novo projeto, adaptando os campos
 ## Estrutura dos arquivos
 
 ```
-ai-best-practices.md          → contrato de comportamento do agente (obrigatório ler por sessão)
-obsidian-documentation.md     → como documentar no vault Obsidian do projeto
-obsidian-documentation.skill  → skill instalável para Claude Code (invoca as convenções automaticamente)
-ferramentas/
-├── coding-conventions.md     → padrões de nomenclatura, estrutura, stack
-├── dry-refactoring.md        → protocolo DRY: extração e rastreamento de utils compartilhados
-├── separation-of-concerns.md → padrão container/presentational e audit arquitetural
-├── dead-code-audit.md        → protocolo de identificação e remoção de código morto
-└── performance-audit.md      → checklist de otimizações e registro de resultados
+ai-best-practices.md                  → contrato de comportamento do agente (obrigatório ler por sessão)
+.claude/
+└── skills/
+    └── obsidian-documentation/
+        └── SKILL.md                  → skill instalada que invoca as convenções Obsidian automaticamente
+documentation/                        → vault Obsidian do projeto
+├── {tools}/
+│   ├── coding-conventions.md         → padrões de nomenclatura, estrutura, stack
+│   ├── dry-refactoring.md            → protocolo DRY: extração e rastreamento de utils compartilhados
+│   ├── separation-of-concerns.md     → padrão container/presentational e audit arquitetural
+│   ├── dead-code-audit.md            → protocolo de identificação e remoção de código morto
+│   └── performance-audit.md          → checklist de otimizações e registro de resultados
+└── {reports}/
+    ├── dry-refac-duplications-solved.md        → duplicações resolvidas (DRY)
+    ├── dry-refac-extraction-pendings.md        → extrações pendentes (DRY)
+    ├── dry-refac-intentionals-devergencies.md  → divergências intencionais (DRY)
+    ├── separation-of-concerns-report.md        → relatório de separação de concerns
+    ├── dead-code-audit-report.md               → relatório de código morto
+    ├── dead-code-todos.md                      → TODOs de remoção de código morto
+    └── performace-audit-report.md              → relatório de performance
 ```
 
 ## Como usar este kit em um projeto novo
 
-1. Copie todos os arquivos para a pasta de instruções do projeto (ex: `vault/{instructions}/`)
+1. Copie todos os arquivos para a pasta de instruções do projeto
 2. Em cada arquivo, busque por `[COMO PREENCHER]` e siga as instruções de preenchimento
 3. Substitua `[NOME DO PROJETO]` pelo nome real em todos os frontmatters
-4. Atualize a estrutura de pastas em `obsidian-documentation.md` (seção 3)
-5. Defina a stack técnica real em `coding-conventions.md`
+4. Atualize a estrutura de pastas na skill `obsidian-documentation` (seção de vault structure)
+5. Defina a stack técnica real em `documentation/{tools}/coding-conventions.md`
 6. Adicione o `ai-best-practices.md` ao contexto de cada sessão do agente
-7. Instale a skill: `claude plugin install obsidian-documentation.skill` — habilita invocação automática das convenções Obsidian pelo agente
+7. A skill `obsidian-documentation` já está em `.claude/skills/` — invocada automaticamente ao trabalhar com o vault `documentation/`
 
 ## Comportamento do agente neste repositório
 
@@ -56,4 +67,4 @@ Ao receber uma tarefa neste repositório:
 1. Verificar se a mudança mantém os arquivos genéricos (sem info específica de projeto)
 2. Verificar se os blocos `[COMO PREENCHER]` estão presentes e corretos onde necessário
 3. Não executar código — este repositório contém apenas documentação
-4. Para adicionar nova ferramenta/template: seguir o padrão dos arquivos existentes em `ferramentas/`
+4. Para adicionar nova ferramenta/template: seguir o padrão dos arquivos existentes em `documentation/{tools}/`

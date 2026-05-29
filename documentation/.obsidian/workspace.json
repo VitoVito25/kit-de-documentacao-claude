@@ -4,41 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "eee82ca6e5afd7bc",
+        "id": "71fb07a6e12b310a",
         "type": "tabs",
         "children": [
           {
-            "id": "87452ceb17d909f3",
+            "id": "1d372ab4f77e2221",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bem-vindo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Bem-vindo"
-            }
-          }
-        ]
-      },
-      {
-        "id": "e8ec3fcfd1cd9ec0",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "d43cfecdf9588401",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bem-vindo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Bem-vindo"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Visualização em gráfico"
             }
           }
         ]
@@ -203,8 +179,23 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "d43cfecdf9588401",
+  "active": "33323642a41fb8b9",
   "lastOpenFiles": [
+    "{tools}/coding-conventions.md",
+    "{tools}/dead-code-audit.md.tmp.23832.58c87757c983",
+    "{reports}/dead-code-audit-report.md",
+    "{reports}/dead-code-audit-report.md.tmp.23832.d7d9ee366bf9",
+    "{tools}/dead-code-audit.md.tmp.23832.68237fadc1a2",
+    "{reports}/dead-code-todos.md",
+    "{reports}/dead-code-todos.md.tmp.23832.9b26720a567b",
+    "{reports}/dead-code-report.md",
+    "{tools}/dead-code-audit.md",
+    "{pages]",
+    "project-structure.md",
+    "{tools}/dry-refactoring.md.tmp.23832.e336a427f748",
+    "{reports}/dry-refac-extraction-pendings.md.tmp.23832.8307e9bf5f76",
+    "{reports}/dry-refac-duplications-solved.md.tmp.23832.2155e842158b",
+    "{reports}/dry-refac-intentionals-devergencies.md.tmp.23832.48a876458eaf",
     "crie um link.md",
     "Bem-vindo.md"
   ]
