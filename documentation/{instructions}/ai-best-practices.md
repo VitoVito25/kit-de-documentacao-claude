@@ -21,7 +21,7 @@ aliases:
 
 > **[COMO PREENCHER]**
 > Este arquivo define o contrato de comportamento do agente para o projeto. As seções abaixo contêm regras genéricas que funcionam para qualquer projeto. Ajuste:
-> - **Seção 1:** O caminho `{for-code}` — substitua pelo nome real da pasta onde ficam os docs de código (ex: `instructions/for-code`)
+> - **Seção 1:** O caminho já está definido como `documentation/{instructions}/`
 > - **Seção 8:** Menciona Supabase — remova ou adapte para a stack do projeto
 > - **Seção 14:** Caminhos de documentação — adapte para a estrutura de pastas do vault do projeto
 > - **Referências finais:** Atualize os wikilinks para os arquivos reais do vault
@@ -33,15 +33,13 @@ aliases:
 Todo trabalho segue **exatamente** este pipeline, sem pular etapas:
 
 ```
-1. ENTENDER    → Ler demanda. Ler TODA documentação de {for-code}. Confirmar ambiguidades.
+1. ENTENDER    → Ler demanda. Ler TODA documentação de documentation/{instructions}/. Confirmar ambiguidades.
 2. ESTRUTURAR  → Montar plano completo: tiers, arquivos afetados, riscos, estimativas.
 3. APRESENTAR  → Exibir plano para aprovação. Aguardar "ok" explícito.
 4. EXECUTAR    → Rodar tier por tier. Pedir aprovação após cada tier.
-5. DOCUMENTAR  → Ler obsidian-documentation.md. Atualizar vault com mudanças e decisões.
+5. DOCUMENTAR  → Atualizar vault com mudanças e decisões (skill obsidian-documentation ativa automaticamente).
 ```
 
-> **[COMO PREENCHER — Step 1]**
-> Substitua `{for-code}` pelo caminho real da pasta de documentação técnica do projeto. Liste todas as notas que o agente deve ler antes de estruturar qualquer plano. Exemplo: `instructions/for-code/`.
 
 ### Detalhamento de cada step
 
@@ -50,7 +48,7 @@ Todo trabalho segue **exatamente** este pipeline, sem pular etapas:
 Ao receber qualquer demanda de código, antes de montar plano:
 
 1. Avaliar o pedido do usuário — qual o objetivo real, não só o literal
-2. Ler **toda** a documentação de `{for-code}/`:
+2. Ler **toda** a documentação de `documentation/{instructions}/`:
    - [[coding-conventions]] — nomenclatura, estrutura de componente, state management
    - [[project-structure]] — onde arquivos novos vão, regras por tipo
    - [[dry-refactoring]] — estrutura atual de utils, divergências intencionais
@@ -60,13 +58,13 @@ Ao receber qualquer demanda de código, antes de montar plano:
 3. Só então estruturar o plano — **com base nas boas práticas já estabelecidas**, não reinventando
 
 > [!warning] Motivo: evitar retrabalho
-> Sem ler `{for-code}` primeiro, risco de: criar arquivo no lugar errado, duplicar código já extraído, violar padrão de nomenclatura, ignorar divergências intencionais documentadas. A leitura prévia transforma o plano de "solução genérica" em "solução alinhada ao projeto".
+> Sem ler `documentation/{instructions}/` primeiro, risco de: criar arquivo no lugar errado, duplicar código já extraído, violar padrão de nomenclatura, ignorar divergências intencionais documentadas. A leitura prévia transforma o plano de "solução genérica" em "solução alinhada ao projeto".
 
-**Step 5 — DOCUMENTAR (obrigatório ler obsidian-documentation antes de escrever)**
+**Step 5 — DOCUMENTAR**
 
 Antes de criar ou editar qualquer nota no vault:
 
-1. Ler [[obsidian-documentation]] — verificar: frontmatter obrigatório, estrutura de nota por tipo, convenções OFM (wikilinks, callouts, tags hierárquicas)
+1. A skill `obsidian-documentation` está ativa — ela define frontmatter obrigatório, estrutura de nota por tipo e convenções OFM (wikilinks, callouts, tags hierárquicas)
 2. Verificar se nota já existe para o tema — se sim, atualizar; nunca duplicar conteúdo
 3. Escrever a nota seguindo o template correto para o tipo (página, regra de negócio, decisão técnica)
 4. Linkar a nota nova nas notas relacionadas via `[[wikilink]]`
@@ -309,15 +307,15 @@ Após cada sessão de mudanças, atualizar obrigatoriamente:
 | Dead code removido | `dead-code-audit.md` seção correspondente |
 
 > **[COMO PREENCHER]**
-> Substitua as células da coluna "Onde documentar" pelos caminhos reais do vault do projeto. Copie a estrutura de pastas definida em `obsidian-documentation.md` como referência.
+> Substitua as células da coluna "Onde documentar" pelos caminhos reais do vault do projeto.
 
-Seguir todas as convenções OFM em [[obsidian-documentation]]: frontmatter obrigatório, wikilinks, callouts para destaques, tags hierárquicas.
+Seguir todas as convenções OFM da skill `obsidian-documentation`: frontmatter obrigatório, wikilinks, callouts para destaques, tags hierárquicas.
 
 ---
 
 ## Referências
 
-Ver também: [[obsidian-documentation]] | [[coding-conventions]] | [[project-structure]] | [[dry-refactoring]] | [[dead-code-audit]] | [[separation-of-concerns]] | [[performance-audit]]
+Ver também: [[coding-conventions]] | [[project-structure]] | [[dry-refactoring]] | [[dead-code-audit]] | [[separation-of-concerns]] | [[performance-audit]]
 
 > **[COMO PREENCHER]**
 > Atualize os wikilinks acima para os nomes reais dos arquivos no vault do projeto.
