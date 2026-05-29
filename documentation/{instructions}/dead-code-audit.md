@@ -36,11 +36,8 @@ Exportados que não aparecem em nenhum `import` ativo no projeto.
 > - Componentes de UI scaffolded reservados para uso futuro
 > - Arquivos que são importados dinamicamente
 > - Entry points que não aparecem em imports mas são usados pelo bundler
->
-> **[COMO PREENCHER]** — Liste aqui os falsos positivos conhecidos do projeto após o primeiro audit.
 
-**Falsos positivos conhecidos:**
-> [Preencher após o primeiro audit. Exemplo: `src/components/ui/accordion.tsx` — instalado pelo shadcn, reservado para uso futuro]
+Falsos positivos conhecidos e módulos confirmados como dead code — registrar em: [[dead-code-unused-modules]]
 
 ### Funções declaradas mas nunca chamadas
 Funções exportadas que não aparecem em nenhuma chamada fora do próprio arquivo.
